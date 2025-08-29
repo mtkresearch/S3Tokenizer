@@ -47,10 +47,11 @@ class AudioDataset(Dataset):
     def __init__(self, wav_scp):
         self.data = []
         self.keys = []
-
         with open(wav_scp, 'r', encoding='utf-8') as f:
             for line in f:
-                key, file_path = line.strip().split()
+                key, file_path = line.strip().split(" ", 1)
+                # 先移除前後空白，再移除引號
+                file_path = file_path.strip().strip('"')
                 self.data.append(file_path)
                 self.keys.append(key)
 
