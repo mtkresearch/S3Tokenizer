@@ -25,8 +25,11 @@ This repository undertakes a reverse engineering of the S3Tokenizer, offering:
 
 # Setup
 
+Install from source
 ```sh
-pip install s3tokenizer
+git clone https://github.com/mtkresearch/S3Tokenizer.git
+cd S3Tokenizer
+pip install . 
 ```
 
 # Usage-1: Offline batch inference
